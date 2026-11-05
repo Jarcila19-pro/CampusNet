@@ -1,0 +1,275 @@
+
+══════════════════════════════════════════════════════════════════════════════
+  CAMPUSNET · RED SOCIAL ACADÉMICA DIRIGIDA
+  Universidad de Manizales · Programación III
+  Arquitectura MVC · Grafo dirigido con lista de adyacencia
+══════════════════════════════════════════════════════════════════════════════
+  Convención: A → B significa que el usuario A sigue al usuario B.
+
+══════════════════════════════════════════════════════════════════════════════
+  CASO 1 · CONSTRUCCIÓN DEL GRAFO
+══════════════════════════════════════════════════════════════════════════════
+  Se creó un grafo dirigido vacío y se cargaron 14 usuarios y 23 relaciones semilla.
+  Usuarios: 14 | Relaciones: 23 | Densidad: 12,64%
+
+──────────────────────────────────────────────────────────────────────────────
+  Lista de adyacencia
+──────────────────────────────────────────────────────────────────────────────
+  u01 | Ana Torres [Estudiante] (entrada: 3, salida: 5)
+      → u02 (Bruno Díaz), u03 (Carla Ruiz), u04 (Diego Mesa), u05 (Elena Vidal), u06 (Fabián Ospina)
+  u02 | Bruno Díaz [Estudiante] (entrada: 1, salida: 4)
+      → u03 (Carla Ruiz), u04 (Diego Mesa), u05 (Elena Vidal), u06 (Fabián Ospina)
+  u03 | Carla Ruiz [Profesor] (entrada: 3, salida: 2)
+      → u01 (Ana Torres), u06 (Fabián Ospina)
+  u04 | Diego Mesa [Profesor] (entrada: 2, salida: 1)
+      → u07 (Gabriela Núñez)
+  u05 | Elena Vidal [Egresado] (entrada: 2, salida: 1)
+      → u07 (Gabriela Núñez)
+  u06 | Fabián Ospina [Estudiante] (entrada: 3, salida: 2)
+      → u01 (Ana Torres), u08 (Hugo Salazar)
+  u07 | Gabriela Núñez [Egresado] (entrada: 3, salida: 1)
+      → u09 (Irene Castro)
+  u08 | Hugo Salazar [Profesor] (entrada: 2, salida: 1)
+      → u10 (Julián Ríos)
+  u09 | Irene Castro [Estudiante] (entrada: 1, salida: 1)
+      → u11 (Karina López)
+  u10 | Julián Ríos [Egresado] (entrada: 1, salida: 1)
+      → u12 (Luis Pardo)
+  u11 | Karina López [Estudiante] (entrada: 1, salida: 1)
+      → u01 (Ana Torres)
+  u12 | Luis Pardo [Profesor] (entrada: 1, salida: 1)
+      → u03 (Carla Ruiz)
+  u13 | Mateo Gil [Estudiante] (entrada: 0, salida: 1)
+      → u07 (Gabriela Núñez)
+  u14 | Natalia Vega [Egresado] (entrada: 0, salida: 1)
+      → u08 (Hugo Salazar)
+
+  Usuarios: 14 | Relaciones: 23 | Densidad: 12,64%
+
+──────────────────────────────────────────────────────────────────────────────
+  Verificación de condiciones mínimas del taller
+──────────────────────────────────────────────────────────────────────────────
+  ✔ Al menos 12 usuarios registrados
+  ✔ Al menos 18 relaciones de seguimiento
+  ✔ Al menos 2 usuarios con grado de salida ≥ 4
+  ✔ Al menos 1 ciclo dirigido detectable
+  ✔ Al menos 2 usuarios sin seguidores (grado de entrada 0)
+
+══════════════════════════════════════════════════════════════════════════════
+  CASO 2 · RECORRIDOS
+══════════════════════════════════════════════════════════════════════════════
+  Se ejecuta BFS desde tres usuarios distintos (u01, u05 y u13).
+
+──────────────────────────────────────────────────────────────────────────────
+  BFS desde u01 (Ana Torres)
+──────────────────────────────────────────────────────────────────────────────
+  Orden de visita:
+     1. u01 (Ana Torres) (nivel 0)
+     2. u02 (Bruno Díaz) (nivel 1)
+     3. u03 (Carla Ruiz) (nivel 1)
+     4. u04 (Diego Mesa) (nivel 1)
+     5. u05 (Elena Vidal) (nivel 1)
+     6. u06 (Fabián Ospina) (nivel 1)
+     7. u07 (Gabriela Núñez) (nivel 2)
+     8. u08 (Hugo Salazar) (nivel 2)
+     9. u09 (Irene Castro) (nivel 3)
+    10. u10 (Julián Ríos) (nivel 3)
+    11. u11 (Karina López) (nivel 4)
+    12. u12 (Luis Pardo) (nivel 4)
+  Vértices alcanzados: 12 de 14.
+  No alcanzados: u13, u14.
+
+──────────────────────────────────────────────────────────────────────────────
+  BFS desde u05 (Elena Vidal)
+──────────────────────────────────────────────────────────────────────────────
+  Orden de visita:
+     1. u05 (Elena Vidal) (nivel 0)
+     2. u07 (Gabriela Núñez) (nivel 1)
+     3. u09 (Irene Castro) (nivel 2)
+     4. u11 (Karina López) (nivel 3)
+     5. u01 (Ana Torres) (nivel 4)
+     6. u02 (Bruno Díaz) (nivel 5)
+     7. u03 (Carla Ruiz) (nivel 5)
+     8. u04 (Diego Mesa) (nivel 5)
+     9. u06 (Fabián Ospina) (nivel 5)
+    10. u08 (Hugo Salazar) (nivel 6)
+    11. u10 (Julián Ríos) (nivel 7)
+    12. u12 (Luis Pardo) (nivel 8)
+  Vértices alcanzados: 12 de 14.
+  No alcanzados: u13, u14.
+
+──────────────────────────────────────────────────────────────────────────────
+  BFS desde u13 (Mateo Gil)
+──────────────────────────────────────────────────────────────────────────────
+  Orden de visita:
+     1. u13 (Mateo Gil) (nivel 0)
+     2. u07 (Gabriela Núñez) (nivel 1)
+     3. u09 (Irene Castro) (nivel 2)
+     4. u11 (Karina López) (nivel 3)
+     5. u01 (Ana Torres) (nivel 4)
+     6. u02 (Bruno Díaz) (nivel 5)
+     7. u03 (Carla Ruiz) (nivel 5)
+     8. u04 (Diego Mesa) (nivel 5)
+     9. u05 (Elena Vidal) (nivel 5)
+    10. u06 (Fabián Ospina) (nivel 5)
+    11. u08 (Hugo Salazar) (nivel 6)
+    12. u10 (Julián Ríos) (nivel 7)
+    13. u12 (Luis Pardo) (nivel 8)
+  Vértices alcanzados: 13 de 14.
+  No alcanzados: u14.
+  Se ejecuta ahora un DFS completo sobre todo el grafo.
+
+──────────────────────────────────────────────────────────────────────────────
+  DFS completo · orden de descubrimiento
+──────────────────────────────────────────────────────────────────────────────
+  u01 → u02 → u03 → u06 → u08 → u10 → u12 → u04 → u07 → u09 → u11 → u05 → u13 → u14
+  Vértices descubiertos: 14 de 14.
+
+──────────────────────────────────────────────────────────────────────────────
+  Ciclos dirigidos detectados por DFS
+──────────────────────────────────────────────────────────────────────────────
+  • u01 → u02 → u03 → u01
+  • u01 → u02 → u03 → u06 → u01
+  • u03 → u06 → u08 → u10 → u12 → u03
+  • u01 → u02 → u04 → u07 → u09 → u11 → u01
+  Total de ciclos detectados: 4.
+
+══════════════════════════════════════════════════════════════════════════════
+  CASO 3 · CONSULTAS SOCIALES
+══════════════════════════════════════════════════════════════════════════════
+
+──────────────────────────────────────────────────────────────────────────────
+  Usuarios sin seguidores (grado de entrada = 0)
+──────────────────────────────────────────────────────────────────────────────
+  • u13 | Mateo Gil | Estudiante | salida: 1
+  • u14 | Natalia Vega | Egresado | salida: 1
+  Total: 2.
+
+──────────────────────────────────────────────────────────────────────────────
+  Usuarios influyentes (mayor grado de entrada)
+──────────────────────────────────────────────────────────────────────────────
+  • u01 | Ana Torres | Estudiante | entrada: 3
+  • u03 | Carla Ruiz | Profesor | entrada: 3
+  • u06 | Fabián Ospina | Estudiante | entrada: 3
+  • u07 | Gabriela Núñez | Egresado | entrada: 3
+  (Empate entre los usuarios mostrados).
+
+──────────────────────────────────────────────────────────────────────────────
+  Usuarios más activos (mayor grado de salida)
+──────────────────────────────────────────────────────────────────────────────
+  • u01 | Ana Torres | Estudiante | salida: 5
+
+──────────────────────────────────────────────────────────────────────────────
+  Alcanzabilidad: ¿u01 puede llegar a u12?
+──────────────────────────────────────────────────────────────────────────────
+  Resultado: SÍ. Camino más corto encontrado con BFS:
+    u01 (Ana Torres) → u06 (Fabián Ospina) → u08 (Hugo Salazar) → u10 (Julián Ríos) → u12 (Luis Pardo)
+  Longitud: 4 arista(s).
+
+──────────────────────────────────────────────────────────────────────────────
+  Alcanzabilidad: ¿u01 puede llegar a u14?
+──────────────────────────────────────────────────────────────────────────────
+  Resultado: NO. No existe un camino dirigido de u01 (Ana Torres) a u14 (Natalia Vega).
+
+══════════════════════════════════════════════════════════════════════════════
+  CASO 4 · OPERACIONES CRUD
+══════════════════════════════════════════════════════════════════════════════
+  Cada operación se valida en el modelo y se reporta el cambio en consola.
+
+  [Paso 1] Agregar usuario u15
+  ✔ Usuario agregado correctamente.
+  Relaciones de u15: salida 0, entrada 0
+    Sigue a: (nadie)
+    Seguido por: (nadie)
+  Usuarios: 15 | Relaciones: 23 | Densidad: 10,95%
+
+  [Paso 2] Intentar agregar un usuario duplicado (u15)
+  ✖ Ya existe un usuario con Id 'u15'. Los Id deben ser únicos.
+  El modelo rechazó el duplicado; la lista de usuarios no cambió.
+
+  [Paso 3] Actualizar nombre y rol de u15
+  Antes:  Sofía Herrera [Estudiante]
+  ✔ Después: Sofía Herrera Gómez [Egresado]
+
+  [Paso 4] Agregar relación u15 → u01
+  ✔ Relación agregada correctamente.
+  Relaciones de u15: salida 1, entrada 0
+    Sigue a: u01 (Ana Torres)
+    Seguido por: (nadie)
+  Usuarios: 15 | Relaciones: 24 | Densidad: 11,43%
+
+  [Paso 5] Intentar agregar la relación duplicada u15 → u01
+  ✖ La relación u15 → u01 ya existe.
+  El modelo rechazó la relación duplicada; el grafo no cambió.
+
+  [Paso 6] Agregar relación inversa u01 → u15
+  ✔ Relación agregada correctamente.
+  Relaciones de u01: salida 6, entrada 4
+    Sigue a: u02 (Bruno Díaz), u03 (Carla Ruiz), u04 (Diego Mesa), u05 (Elena Vidal), u06 (Fabián Ospina), u15 (Sofía Herrera Gómez)
+    Seguido por: u03 (Carla Ruiz), u06 (Fabián Ospina), u11 (Karina López), u15 (Sofía Herrera Gómez)
+
+  [Paso 7] Eliminar relación u01 → u15
+  ✔ Relación eliminada correctamente.
+  Relaciones de u01: salida 5, entrada 4
+    Sigue a: u02 (Bruno Díaz), u03 (Carla Ruiz), u04 (Diego Mesa), u05 (Elena Vidal), u06 (Fabián Ospina)
+    Seguido por: u03 (Carla Ruiz), u06 (Fabián Ospina), u11 (Karina López), u15 (Sofía Herrera Gómez)
+  Usuarios: 15 | Relaciones: 24 | Densidad: 11,43%
+
+  [Paso 8] Eliminar usuario u15 (y sus relaciones incidentes)
+  ✔ Usuario u15 (Sofía Herrera Gómez) eliminado.
+  Relaciones eliminadas:
+    u15 → u01 (Ana Torres)
+  Usuarios: 14 | Relaciones: 23 | Densidad: 12,64%
+
+  [Paso 9] Intentar eliminar un usuario inexistente (u99)
+  ✖ No existe un usuario con Id 'u99'.
+
+══════════════════════════════════════════════════════════════════════════════
+  ANÁLISIS FINAL DE CONECTIVIDAD
+══════════════════════════════════════════════════════════════════════════════
+
+──────────────────────────────────────────────────────────────────────────────
+  Resumen estructural
+──────────────────────────────────────────────────────────────────────────────
+  Vértices: 14 | Aristas: 23 | Densidad: 12,64%
+
+──────────────────────────────────────────────────────────────────────────────
+  Componentes débilmente conexas: 1
+──────────────────────────────────────────────────────────────────────────────
+  • 14 usuario(s): u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11, u12, u13, u14
+
+──────────────────────────────────────────────────────────────────────────────
+  Componentes fuertemente conexas: 3
+──────────────────────────────────────────────────────────────────────────────
+  • 12 usuario(s) [grupo]: u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11, u12
+  • 1 usuario(s) [componente trivial]: u13
+  • 1 usuario(s) [componente trivial]: u14
+  Usuarios NO alcanzables desde u01 (Ana Torres): u13, u14.
+
+──────────────────────────────────────────────────────────────────────────────
+  Interpretación
+──────────────────────────────────────────────────────────────────────────────
+  El grafo es débilmente conexo: todos los usuarios están conectados si se ignoran las direcciones.
+  El grafo no es fuertemente conexo (3 componentes): existen usuarios que no pueden alcanzarse mutuamente.
+  Aunque u01 es el usuario más activo, no puede llegar a u13, u14: tienen relaciones salientes, pero nadie los sigue.
+
+──────────────────────────────────────────────────────────────────────────────
+  MENÚ INTERACTIVO
+──────────────────────────────────────────────────────────────────────────────
+   1. Ver lista de adyacencia
+   2. Ver usuarios registrados
+   3. Agregar usuario
+   4. Eliminar usuario
+   5. Actualizar nombre o rol
+   6. Agregar relación (seguir)
+   7. Eliminar relación (dejar de seguir)
+   8. Ejecutar BFS desde un usuario
+   9. Ejecutar DFS completo
+  10. Consultas sociales
+  11. Verificar alcanzabilidad
+  12. Análisis de conectividad
+   0. Salir
+  Seleccione una opción: 
+══════════════════════════════════════════════════════════════════════════════
+  Fin de la ejecución de CampusNet. ¡Hasta pronto!
+══════════════════════════════════════════════════════════════════════════════
