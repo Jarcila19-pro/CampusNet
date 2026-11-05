@@ -56,6 +56,9 @@ Responsabilidades respetadas:
 - No requiere paquetes NuGet ni configuración adicional.
 
 ```bash
+git clone https://github.com/Jarcila19-pro/CampusNet.git
+cd CampusNet
+
 # Desde la raíz del repositorio
 dotnet build
 dotnet run
