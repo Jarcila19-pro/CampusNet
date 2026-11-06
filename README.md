@@ -20,9 +20,9 @@ bajo una arquitectura **MVC estricta**.
 
 ### Dinámica de trabajo
 
-El taller se desarrolló de forma **grupal y en llamada**, con los tres integrantes
-trabajando juntos en el diseño, la implementación y las pruebas, manteniendo la misma
-dinámica de trabajo de la primera tarea. Cada integrante realizó aportes verificables
+El taller se desarrolló de forma **grupal y en llamada**, entre amigos y con la misma
+dinámica de trabajo de la primera tarea, con los tres integrantes trabajando juntos en
+el diseño, la implementación y las pruebas. Cada integrante realizó aportes verificables
 en el repositorio y participó en la revisión del resultado final.
 
 ### Contribuciones verificables
