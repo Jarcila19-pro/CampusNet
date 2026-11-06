@@ -231,6 +231,31 @@ public sealed class ConsoleView
         Console.WriteLine($"  Total: {users.Count}.");
     }
 
+    public void ShowUsersByRole(Graph graph, Role role)
+    {
+        ShowSubsection($"Usuarios con rol {role.ToDisplayName()}");
+
+        var users = graph.Vertices.Values
+            .Where(vertex => vertex.Role == role)
+            .OrderBy(vertex => vertex.Id, StringComparer.Ordinal)
+            .ToList();
+
+        if (users.Count == 0)
+        {
+            Console.WriteLine("  No hay usuarios con este rol.");
+            return;
+        }
+
+        foreach (var user in users)
+        {
+            Console.WriteLine(
+                $"  • {user.Id} | {user.Name} | entrada: {graph.GetInDegree(user.Id)}, " +
+                $"salida: {graph.GetOutDegree(user.Id)}");
+        }
+
+        Console.WriteLine($"  Total: {users.Count}.");
+    }
+
     public void ShowDegreeRanking(string title, IReadOnlyList<DegreeEntry> entries, string degreeLabel)
     {
         ShowSubsection(title);
@@ -338,6 +363,7 @@ public sealed class ConsoleView
         Console.WriteLine("  10. Consultas sociales");
         Console.WriteLine("  11. Verificar alcanzabilidad");
         Console.WriteLine("  12. Análisis de conectividad");
+        Console.WriteLine("  13. Ver usuarios por rol");
         Console.WriteLine("   0. Salir");
     }
 
@@ -353,12 +379,12 @@ public sealed class ConsoleView
                 return 0;
             }
 
-            if (int.TryParse(input.Trim(), out var option) && option is >= 0 and <= 12)
+            if (int.TryParse(input.Trim(), out var option) && option is >= 0 and <= 13)
             {
                 return option;
             }
 
-            ShowError("Opción inválida. Ingrese un número entre 0 y 12.");
+            ShowError("Opción inválida. Ingrese un número entre 0 y 13.");
         }
     }
 

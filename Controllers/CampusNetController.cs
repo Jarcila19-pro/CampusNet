@@ -356,6 +356,13 @@ public sealed class CampusNetController
                 case 12:
                     ShowConnectivityAnalysis();
                     break;
+
+                case 13:
+                {
+                    var role = _view.ReadRole() ?? Role.Student;
+                    _view.ShowUsersByRole(_graph, role);
+                    break;
+                }
             }
         }
     }
