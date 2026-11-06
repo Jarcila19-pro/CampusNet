@@ -25,6 +25,16 @@ trabajando juntos en el diseño, la implementación y las pruebas, manteniendo l
 dinámica de trabajo de la primera tarea. Cada integrante realizó aportes verificables
 en el repositorio y participó en la revisión del resultado final.
 
+### Contribuciones verificables
+
+| Integrante | Aporte principal | Evidencia |
+|---|---|---|
+| Juan Esteban Arcila Espitia | Implementación base del modelo, recorridos, consultas, conectividad y documentación | [c77af03](https://github.com/Jarcila19-pro/CampusNet/commit/c77af03), [a05d010](https://github.com/Jarcila19-pro/CampusNet/commit/a05d010) |
+| Juan Alejandro Cardona | Resaltado de mensajes de éxito y error en la vista | [PR #3](https://github.com/Jarcila19-pro/CampusNet/pull/3), [53bc170](https://github.com/Jarcila19-pro/CampusNet/commit/53bc170) |
+| Juan Martin Lopez | Consulta de usuarios por rol (opción 13 del menú) | [PR #4](https://github.com/Jarcila19-pro/CampusNet/pull/4), [a9e1730](https://github.com/Jarcila19-pro/CampusNet/commit/a9e1730) |
+
+Todos los aportes fueron revisados, probados y fusionados a la rama `main`.
+
 ---
 
 ## Arquitectura MVC
