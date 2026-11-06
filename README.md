@@ -12,13 +12,18 @@ bajo una arquitectura **MVC estricta**.
 
 ## Integrantes y responsabilidades
 
-| Integrante | Responsabilidad principal |
-|---|---|
-| **1. _(completar nombre completo)_** | **Modelo:** clases `Vertex`, `Edge` y `Graph`, lista de adyacencia, validación de duplicados, BFS, DFS, ciclos, grados y componentes conexas. |
-| **2. _(completar nombre completo)_** | **Vista:** `ConsoleView`, formato de la lista de adyacencia, resultados de recorridos, consultas, operaciones CRUD y menú interactivo. |
-| **3. _(completar nombre completo)_** | **Controlador:** `CampusNetController`, casos de uso, datos semilla, manejo de errores de dominio, análisis final y documentación. |
+| Integrante | GitHub | Responsabilidad principal |
+|---|---|---|
+| **Juan Esteban Arcila Espitia** | [@Jarcila19-pro](https://github.com/Jarcila19-pro) | **Modelo:** clases `Vertex`, `Edge` y `Graph`, lista de adyacencia, validación de duplicados, BFS, DFS, ciclos, grados y componentes conexas. Coordinación del equipo. |
+| **Juan Alejandro Cardona** | [@alejandrocardo1001](https://github.com/alejandrocardo1001) | **Vista:** `ConsoleView`, formato de la lista de adyacencia, resultados de recorridos, consultas, operaciones CRUD y menú interactivo. |
+| **Juan Martin Lopez** | [@tincito1](https://github.com/tincito1) | **Controlador:** `CampusNetController`, casos de uso, datos semilla, manejo de errores de dominio, análisis final y pruebas. |
 
-> Reemplazar los nombres por los datos reales del equipo antes de la entrega.
+### Dinámica de trabajo
+
+El taller se desarrolló de forma **grupal y en llamada**, con los tres integrantes
+trabajando juntos en el diseño, la implementación y las pruebas, manteniendo la misma
+dinámica de trabajo de la primera tarea. Cada integrante realizó aportes verificables
+en el repositorio y participó en la revisión del resultado final.
 
 ---
 
