@@ -63,9 +63,17 @@ public sealed class ConsoleView
 
     public void ShowMessage(string message) => Console.WriteLine($"  {message}");
 
-    public void ShowSuccess(string message) => Console.WriteLine($"  ✔ {message}");
+    public void ShowSuccess(string message) => WriteColored($"  ✔ {message}", ConsoleColor.Green);
 
-    public void ShowError(string message) => Console.WriteLine($"  ✖ {message}");
+    public void ShowError(string message) => WriteColored($"  ✖ {message}", ConsoleColor.Red);
+
+    private static void WriteColored(string text, ConsoleColor color)
+    {
+        var original = Console.ForegroundColor;
+        Console.ForegroundColor = color;
+        Console.WriteLine(text);
+        Console.ForegroundColor = original;
+    }
 
     // ---------------------------------------------------------------------
     // Grafo
