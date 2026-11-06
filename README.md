@@ -162,6 +162,7 @@ Condiciones exigidas por el taller:
 - Usuarios más influyentes (mayor grado de entrada, con empates).
 - Usuarios más activos (mayor grado de salida).
 - Alcanzabilidad entre dos usuarios usando BFS, mostrando el camino más corto.
+- Consulta adicional: usuarios filtrados por rol (Estudiante, Profesor o Egresado) desde la opción 13 del menú.
 
 ### 4. Operaciones CRUD
 
